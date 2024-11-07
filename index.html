@@ -29,39 +29,201 @@
             font-weight: bold;  /* Optionally, bold the active item */
         }
 
-        /* Gallery */
-        .gallery {
-            padding: 40px;
-            background-color: #f4f4f4;
-            text-align: center;
+        /* Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+    }
+    /* Custom Font and Colors */
+    body {
+        font-family: 'Montserrat', sans-serif;
+        color: #333;
+    }
+
+    header .navbar-brand {
+        color: #618a6c;
+        font-size: 1.5em;
+    }
+
+    .gallery h2 {
+        color: #618a6c;
+    }
+
+    /* Optional Carousel Caption Styling */
+    .carousel-caption h5 {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    /* Header */
+    header {
+        background-color: #eae7dc;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header .logo {
+        font-size: 1.5em;
+        color: #618a6c;
+    }
+
+    header nav ul {
+        list-style: none;
+        display: flex;
+    }
+
+    header nav ul li {
+        margin-left: 20px;
+    }
+
+    header nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+    }
+    /* Custom Navbar Background Color */
+    .bg-custom {
+        background-color: #eae7dc; /* Replace with the desired theme color */
+    }
+
+    .navbar-brand {
+        color: #618a6c;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    .navbar-nav .nav-link {
+        color: #333;
+        font-weight: 500;
+        margin-right: 15px;
+    }
+
+    /* Hover effect for nav links */
+    .navbar-nav .nav-link:hover {
+        color: #618a6c;
+    }
+
+    /* Ensure the navbar fills the full width */
+    header .navbar {
+        width: 100%;
+    }
+
+    /* Navbar button custom color on small screens */
+    .navbar-toggler-icon {
+        background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba%2864,64,64,0.8%29" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+    }
+
+    /* Hero Carousel */
+    .hero-carousel {
+        position: relative;
+        height: 75vh;
+        overflow: hidden;
+    }
+
+    .hero-carousel img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+        /* Carousel caption styling */
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            padding: 10px;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 50px;
+            left: 50px;
+            width: 70%;  /* Adjust to control caption width */
         }
 
-        .gallery h2 {
+        /* Carousel title styling */
+        .carousel-title {
+            color: #ffffff; /* White text */
             font-size: 2em;
-            color: #618a6c;
-            margin-bottom: 20px;
+            font-weight: bold;
         }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+        /* Positioning action button at the bottom-right of the slide */
+        .carousel-action-btn {
+            position: absolute;
+            bottom: 20px; /* Adjust as needed */
+            right: 20px; /* Position to the bottom-right */
+            z-index: 10; /* Ensure button is on top of other content */
         }
 
-        .gallery-grid img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Footer */
-        footer {
-            background-color: #333;
+        /* Styling for the action button */
+        .carousel-action-btn .btn {
+            background-color: #5a9a77; /* Button color */
             color: #fff;
-            text-align: center;
-            padding: 15px;
-            font-size: 0.9em;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 1.2em;
+            text-transform: uppercase;
         }
+
+        /* Hover effect for button */
+        .carousel-action-btn .btn:hover {
+            background-color: #3e7f5c;
+        }
+
+        /* Optional: Ensuring images cover the full container */
+        .carousel-item img {
+            object-fit: cover;
+            width: 100%;
+            height: 75vh; /* Adjust height based on your design needs */
+        }
+
+        /* Optional: Style for carousel indicators */
+        .carousel-indicators li {
+            background-color: #ffffff;
+        }
+
+
+    /* Gallery */
+    .gallery {
+        padding: 40px;
+        background-color: #f4f4f4;
+        text-align: center;
+    }
+
+    .gallery h2 {
+        font-size: 2em;
+        color: #618a6c;
+        margin-bottom: 20px;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .gallery-grid img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Footer */
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 15px;
+        font-size: 0.9em;
+    }
+
+    /* Carousel Animation */
+    @keyframes slide {
+        0%, 33% { transform: translateX(0); }
+        34%, 66% { transform: translateX(-100%); }
+        67%, 100% { transform: translateX(-200%); }
+    }
     </style>
 </head>
 <body>
@@ -76,10 +238,10 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="project.html#">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="file:///C:/Users/sharu/OneDrive/Desktop/arch-demo/index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="file:///C:/Users/sharu/OneDrive/Desktop/arch-demo/about%20us%20page/AboutUs.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="file:///C:/Users/sharu/OneDrive/Desktop/arch-demo/projects%20page/project.html#">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="file:///C:/Users/sharu/OneDrive/Desktop/arch-demo/contact%20us%20page/contact.html">Contact</a></li>
                 </ul>
             </div>
         </nav>
